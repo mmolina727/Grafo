@@ -38,7 +38,7 @@ public class ServicioDFS {
 	
 	private ArrayList<Integer> dfsVisit(int v) {
 		color.put(v, "AMARILLO");
-		marcado.clear();
+		//marcado.clear();
 		marcado.add(v);
 		
 		Iterator<Integer>iterAdya= grafo.obtenerAdyacentes(v);

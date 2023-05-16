@@ -6,17 +6,26 @@ public class Main {
 		
 		GrafoDirigido<Integer> gf= new GrafoDirigido<Integer>();
 
-		gf.agregarVertice(12);
-		gf.agregarVertice(15);
-		gf.agregarVertice(17);
-		gf.agregarVertice(20);
-		gf.agregarVertice(11);
-		gf.agregarVertice(18);
-		gf.agregarVertice(26);
-		gf.agregarArco(12, 20, null);
-		gf.agregarArco(15, 17, null);
-		gf.agregarArco(11, 18, null);
-		gf.agregarArco(11, 17, null);
+		gf.agregarVertice(1);
+		gf.agregarVertice(7);
+		gf.agregarVertice(5);
+		gf.agregarVertice(3);
+		gf.agregarVertice(2);
+		gf.agregarVertice(8);
+		gf.agregarVertice(9);
+		gf.agregarVertice(13);
+		gf.agregarArco(1, 7, null);
+		gf.agregarArco(1, 5, null);
+		gf.agregarArco(1, 3, null);
+		gf.agregarArco(7, 8, null);
+		gf.agregarArco(5, 8, null);
+		gf.agregarArco(3, 2, null);
+		gf.agregarArco(2, 8, null);
+		gf.agregarArco(2, 9, null);
+		gf.agregarArco(8, 9, null);
+		gf.agregarArco(7, 13, null);
+		gf.agregarArco(13, 8, null);
+		gf.agregarArco(3, 1, null);
 		
 		
 		System.out.println("Cantidad de arcos "+ gf.cantidadArcos());
@@ -33,8 +42,18 @@ public class Main {
 			System.out.println(iteradorVertices.next());
 		}
 		
+		///////////SERVICIO DFS//////////////
 		ServicioDFS dfs= new ServicioDFS(gf);
 		System.out.println(dfs.dfsForest());
+		
+		///////////SERVICIO BFS//////////////
+		ServicioBFS bfs= new ServicioBFS(gf);
+		System.out.println(bfs.bfsForest());
+		
+		//////////SERVICIO CAMINOS///////////
+		ServicioCaminos cam= new ServicioCaminos(gf,1,8,5);
+		System.out.println(cam.caminos());
+
 	}
 
 }
